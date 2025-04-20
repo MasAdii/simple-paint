@@ -69,3 +69,27 @@ colorPicker.addEventListener('input', changeColor)
 canvas.addEventListener('mousedown', start)
 canvas.addEventListener('mouseup', end)
 canvas.addEventListener('mousemove', draw)
+
+canvas.addEventListener('touchstart', (e) => {
+    e.preventDefault()
+    const touch = e.touches[0]
+    start(convertTouchToMouse(touch))
+})
+
+canvas.addEventListener('touchend', (e) => {
+    e.preventDefault()
+    end(e)
+})
+
+canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault()
+    const touch = e.touches[0]
+    draw(convertTouchToMouse(touch))
+})
+
+function convertTouchToMouse(touch) {
+    return {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+    }
+}
