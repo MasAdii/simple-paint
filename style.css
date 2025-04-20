@@ -48,11 +48,6 @@ button:hover {
     background-color: #ddd;
 }
 
-button:active {
-    background-color: #cccccc;
-    color: blue;
-}
-
 canvas {
     border: 1px solid #000000;
     border-radius: 4px;

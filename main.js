@@ -88,8 +88,9 @@ canvas.addEventListener('touchmove', (e) => {
 })
 
 function convertTouchToMouse(touch) {
+    const rect = canvas.getBoundingClientRect();
     return {
-        clientX: touch.clientX,
-        clientY: touch.clientY
+        clientX: touch.clientX - rect.left,
+        clientY: touch.clientY - rect.top
     }
 }
