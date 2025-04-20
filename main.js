@@ -25,21 +25,21 @@ function end(e){
 }
 
 function draw(e){
-    if(!painting) return
+    if(!painting) return;
 
-    ctx.lineWidth = lineWidth
-    ctx.lineCap = 'round'
-    ctx.strokeStyle = erasing ? '#FFFFFF' : currentColor
+    ctx.lineWidth = lineWidth;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = erasing ? '#FFFFFF' : currentColor;
 
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const x = e.clientX;
+    const y = e.clientY;
 
     ctx.lineTo(x, y);
     ctx.stroke();
     ctx.beginPath();
     ctx.moveTo(x, y);
 }
+
 
 function selectBrush(){
     erasing = false
