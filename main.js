@@ -71,21 +71,22 @@ canvas.addEventListener('mouseup', end)
 canvas.addEventListener('mousemove', draw)
 
 canvas.addEventListener('touchstart', (e) => {
-    e.preventDefault()
-    const touch = e.touches[0]
-    start(convertTouchToMouse(touch))
-})
+    e.preventDefault();
+    const touch = e.touches[0];
+    start(convertTouchToMouse(touch));
+}, { passive: false });
 
 canvas.addEventListener('touchend', (e) => {
-    e.preventDefault()
-    end(e)
-})
+    e.preventDefault();
+    end(e);
+}, { passive: false });
 
 canvas.addEventListener('touchmove', (e) => {
-    e.preventDefault()
-    const touch = e.touches[0]
-    draw(convertTouchToMouse(touch))
-})
+    e.preventDefault();
+    const touch = e.touches[0];
+    draw(convertTouchToMouse(touch));
+}, { passive: false });
+
 
 function convertTouchToMouse(touch) {
     const rect = canvas.getBoundingClientRect();
