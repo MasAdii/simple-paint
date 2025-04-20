@@ -1,0 +1,96 @@
+*, html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.paint-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .4s ease-in;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+button:active {
+    background-color: #cccccc;
+    color: blue;
+}
+
+canvas {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* RESPONSIVE: Tablet dan HP */
+@media (max-width: 768px) {
+    .toolbar {
+        gap: 8px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    canvas {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .paint-app {
+        padding: 8px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+    }
+}
